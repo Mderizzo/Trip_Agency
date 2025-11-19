@@ -1,0 +1,102 @@
+html, body {
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+
+    background-color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+
+main {
+
+    flex:1;
+}
+
+
+h1, h2, h3 {
+
+    font-weight: 600;
+    color: #333;
+
+}
+
+.navbar{
+
+    box-shadow: 0, 2px 4px rgb(0, 0, 0.1);
+
+}
+
+.navbar .nav-link:hover{
+
+    text-decoration: underline;
+}
+
+.card {
+
+    box-shadow: 0, 2px 4px rgb(0, 0, 0.5);
+    border-radius: 8px;
+    
+}
+
+
+.table thead th {
+
+    font-weight: 200;
+    color: #333;
+}
+
+
+
+
+footer{
+
+    margin-top: auto;
+}
+
+
+.pagination_personal .page-link{
+
+    color: #ffff;
+    background-color: #0081A7;
+    border-color: #FAEBD7;
+
+}
+
+
+.pagination_personal .page-link:hover{
+    
+    color: #ffff;
+    background-color: #22a3ca;
+    border-color: #FAEBD7;
+
+}
+
+.pagination_personal .page-item.active .page-link {
+
+    color: #ffff;
+    background-color: #22a3ca;
+    border-color: #FAEBD7;
+
+}
+
+.footer_personal{
+
+    margin-top: 50px;
+    height: 136px;
+    width: 100%;
+}
+
+
+.footer_personal1{
+
+    margin-top: 50px;
+    height: 117px;
+    width: 100%;
+}
