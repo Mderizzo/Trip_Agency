@@ -99,4 +99,10 @@ le date sono stringhe s
 
     * data_prenotazione DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP, è stato deciso affinchè una prenotazione prenda l ora e la data di inserimento in modo automatico
 
+        * posti_disponibili ??
 
+        * aggiungere flag al cliente se ha prenotazioni
+
+        * features da implementare sul nome del file caricato
+                
+                "nome_fil.....PNG" Nella colonna DOCUMENTO

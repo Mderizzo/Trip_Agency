@@ -8,7 +8,7 @@
     $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
     $offset = ($page - 1) * $perPagina;
 
-
+    
     //QUERY PER ESTRARRE DATI PER SELECT DROPDOWN Clienti e Destinazioni
     $clienti = $conn->query("SELECT id, nome, cognome FROM clienti");
     $destinazioni = $conn->query("SELECT id, citta, paese FROM destinazioni");
@@ -265,51 +265,52 @@
 
 
     <!--Tabella-->
-    <table class="table table-striped">
+    <div class="table-responsive">
+        <table class="table table-striped">
 
-        <thead>
-            <!--Intestazione tabella-->
-            <tr>
-
-                <th>ID</th>
-                <th>Cliente</th>
-                <th>Destinazione</th>
-                <th>Data di Prenotazione</th>
-                <th>Acconto</th>
-                <th>Assicurazione</th>
-                <th>Azioni</th>
-
-            </tr>
-
-        </thead>
-        <!--Corpo tabella-->
-        <tbody>
-
-            <?php while ($row = $result->fetch_assoc()) : ?>
-                
+            <thead>
+                <!--Intestazione tabella-->
                 <tr>
-                    <td><?= $row['id'] ?></td>
-                    <td><?= $row['nome'] . ' ' . $row['cognome'] ?></td>
-                    <td><?= $row['citta'] ?></td>
-                    <td><?= $row['data_prenotazione'] ?></td>
-                    <td><?= $row['acconto'] ?></td>
-                    <td><?= $row['assicurazione'] == 1 ? 'Presente' : 'Non presente' ?></td>
-                    <td>
 
-                        <a class="btn btn-sm btn-warning" href="?modifica=<?= $row['id']  ?>">Modifica</a>
-                        <a class="btn btn-sm btn-danger" href="?elimina=<?= $row['id']  ?>" onclick="return confirm ('Sicuro?')">Elimina</a>
+                    <th>ID</th>
+                    <th>Cliente</th>
+                    <th>Destinazione</th>
+                    <th>Data di Prenotazione</th>
+                    <th>Acconto</th>
+                    <th>Assicurazione</th>
+                    <th class="text-center">Azioni</th>
 
-
-                    </td>
                 </tr>
 
+            </thead>
+            <!--Corpo tabella-->
+            <tbody>
 
-            <?php endwhile; ?>
+                <?php while ($row = $result->fetch_assoc()) : ?>
+                    
+                    <tr>
+                        <td><?= $row['id'] ?></td>
+                        <td><?= $row['nome'] . ' ' . $row['cognome'] ?></td>
+                        <td><?= $row['citta'] ?></td>
+                        <td><?= $row['data_prenotazione'] ?></td>
+                        <td><?= $row['acconto'] ?></td>
+                        <td><?= $row['assicurazione'] == 1 ? 'Presente' : 'Non presente' ?></td>
+                        <td class="text-center">
 
-        </tbody>
+                            <a class="btn btn-sm btn-warning" href="?modifica=<?= $row['id']  ?>">🖊️</a>
+                            <a class="btn btn-sm btn-danger" href="?elimina=<?= $row['id']  ?>" onclick="return confirm ('Sicuro?')">🗑️</a>
 
-    </table>
 
+                        </td>
+                    </tr>
+
+
+                <?php endwhile; ?>
+
+            </tbody>
+
+        </table>
+    </div>
 
 
     <!--Paginazione-->

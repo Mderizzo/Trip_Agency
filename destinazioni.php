@@ -165,6 +165,13 @@
                             type="submit">
                             <?= $destinazione_modifica ? 'Salva' : 'Aggiungi' ?>
                         </button>
+
+                        <!--Pulsante ANNULLA-->
+                        <?php if ($destinazione_modifica) : ?>
+
+                            <a href="destinazioni.php" class="btn btn-secondary ms-2">Annulla</a>
+
+                        <?php endif;?>
                     
                     </div>
 
@@ -192,52 +199,54 @@
 
 
     <!--Tabella-->
-    <table class="table table-striped">
+    <div class="table-responsive">
+        <table class="table table-striped">
 
-        <thead>
-            <!--Intestazione tabella-->
-            <tr>
-
-                <th>ID</th>
-                <th>Città</th>
-                <th>Paese</th>
-                <th>Prezzo</th>
-                <th>Data di Partenza</th>
-                <th>Data di Ritorno</th>
-                <th>Posti Disponibili</th>
-                <th>Azioni</th>
-
-            </tr>
-
-        </thead>
-        <!--Corpo tabella-->
-        <tbody>
-
-            <?php while ($row = $result->fetch_assoc()) : ?>
-                
+            <thead>
+                <!--Intestazione tabella-->
                 <tr>
-                    <td><?= $row['id'] ?></td>
-                    <td><?= $row['citta'] ?></td>
-                    <td><?= $row['paese'] ?></td>
-                    <td><?= $row['prezzo'] ?></td>
-                    <td><?= $row['data_partenza'] ?></td>
-                    <td><?= $row['data_ritorno'] ?></td>
-                    <td><?= $row['posti_disponibili'] ?></td>
-                    <td>
 
-                        <a class="btn btn-sm btn-warning" href="?modifica=<?= $row['id']  ?>">Modifica</a>
-                        <a class="btn btn-sm btn-danger" href="?elimina=<?= $row['id']  ?>" onclick="return confirm ('Sicuro?')">Elimina</a>
+                    <th>ID</th>
+                    <th>Città</th>
+                    <th>Paese</th>
+                    <th>Prezzo</th>
+                    <th>Data di Partenza</th>
+                    <th>Data di Ritorno</th>
+                    <th class="text-center">Posti Disponibili</th>
+                    <th class="text-center">Azioni</th>
 
-
-                    </td>
                 </tr>
 
+            </thead>
+            <!--Corpo tabella-->
+            <tbody>
 
-            <?php endwhile; ?>
+                <?php while ($row = $result->fetch_assoc()) : ?>
+                    
+                    <tr>
+                        <td><?= $row['id'] ?></td>
+                        <td><?= $row['citta'] ?></td>
+                        <td><?= $row['paese'] ?></td>
+                        <td><?= $row['prezzo'] ?></td>
+                        <td><?= $row['data_partenza'] ?></td>
+                        <td><?= $row['data_ritorno'] ?></td>
+                        <td class="text-center"><?= $row['posti_disponibili'] ?></td>
+                        <td class="text-center">
 
-        </tbody>
+                            <a class="btn btn-sm btn-warning" href="?modifica=<?= $row['id']  ?>">🖊️</a>
+                            <a class="btn btn-sm btn-danger" href="?elimina=<?= $row['id']  ?>" onclick="return confirm ('Sicuro?')">🗑️</a>
 
-    </table>
+
+                        </td>
+                    </tr>
+
+
+                <?php endwhile; ?>
+
+            </tbody>
+
+        </table>
+    </div>
 
 
 

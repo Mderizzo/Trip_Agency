@@ -100,3 +100,19 @@ footer{
     height: 117px;
     width: 100%;
 }
+
+/* MEDIA QUERY PER REGOLE SU BREAKPOINT */
+@media (max-width: 992px) { /* breakpoint schermo */
+    
+    .table-responsive {
+        overflow-x: auto;
+    }
+
+}  
+
+
+/* elementi hamburgher menu a destra*/
+.item_right {
+
+    margin-left: auto;
+}
